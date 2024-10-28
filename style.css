@@ -86,7 +86,7 @@ nav button:hover {
     background-size: inherit;
     background-position: inherit;
     background-attachment: inherit;
-    filter: blur(50px); /* Blur effect */
+    filter: blur(12px); /* Blur effect */
     z-index: -1;
 }
 
