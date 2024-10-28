@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health and Wellness for Kids</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <button onclick="showSection('home')">Home</button>
+        <button onclick="showSection('about')">About</button>
+        <button onclick="showSection('mealplan')">Meal Plan</button>
+        <button onclick="showSection('recipes')">10-Min Healthy Recipes</button>
+        <button onclick="showSection('exercise')">Play Ideas</button>
+        <button onclick="showSection('news')">News</button>
+    </nav>
+
+    <!-- Home Section -->
+    <div id="home" class="section"> 
+        <h2>Welcome to Our Kids Health and Wellness Website</h2>
+        <p>Your go-to resource for healthy meal plans kids, quick healthy recipes for kids, Physical play ideas, and kids related news!</p>
+    </div>
+
+    <!-- About Section -->
+    <div id="about" class="section" style="display: none;">
+        <h2>About Us</h2>
+        <p>This website is dedicated to promoting health and wellness for kids. We provide nutritious meal plans, easy-to-make recipes, Physical play ideas, and the latest news related to children's health.</p>
+    </div>
+
+    <!-- Meal Plan Section -->
+    <div id="mealplan" class="section" style="display: none;">
+        <h2>Monthly Meal Plan (Toddler-Friendly)</h2>
+        <table>
+            <tr>
+                <th>Day</th>
+                <th>Breakfast</th>
+                <th>Lunch</th>
+                <th>Dinner</th>
+            </tr>
+            <!-- Day 1 to Day 7 with sample healthy options -->
+            <tr>
+                <td>Day 1</td>
+                <td>Oats porridge with mashed banana</td>
+                <td>Rice with moong dal and steamed carrots</td>
+                <td>Mashed sweet potatoes with a side of plain yogurt</td>
+            </tr>
+            <tr>
+                <td>Day 2</td>
+                <td>Whole wheat pancake with fruit puree (no sugar)</td>
+                <td>Vegetable khichdi with carrots and peas</td>
+                <td>Mashed pumpkin with a little ghee and cooked rice</td>
+            </tr>
+            <tr>
+                <td>Day 3</td>
+                <td>Ragi porridge with dates syrup (unsweetened)</td>
+                <td>Soft chapati with mashed dal and a bit of ghee</td>
+                <td>Idli with coconut chutney (mild)</td>
+            </tr>
+            <tr>
+                <td>Day 4</td>
+                <td>Fruit smoothie with banana, oats, and yogurt</td>
+                <td>Soft rice with spinach dal</td>
+                <td>Vegetable upma (softened for easy chewing)</td>
+            </tr>
+            <tr>
+                <td>Day 5</td>
+                <td>Mashed avocado on soft bread or rice dosa</td>
+                <td>Soft moong dal khichdi with vegetables</td>
+                <td>Curd rice with grated cucumber</td>
+            </tr>
+            <tr>
+                <td>Day 6</td>
+                <td>Suji (semolina) porridge with milk (if not allergic)</td>
+                <td>Rice with mild vegetable curry (like potato, pumpkin)</td>
+                <td>Dal soup with soft rice and mashed vegetables</td>
+            </tr>
+            <tr>
+                <td>Day 7</td>
+                <td>Apple and banana mash with oats</td>
+                <td>Rice with mashed lentils and a drizzle of ghee</td>
+                <td>Soft roti with mashed peas and mild spices</td>
+            </tr>
+            <!-- Continue with similar healthy options for the rest of the month -->
+        </table>
+    </div>
+    
+    <!-- 10-Minute Healthy Recipes Section -->
+    <div id="recipes" class="section" style="display: none;">
+        <h2>10-Minute Healthy Recipes</h2>
+        <ul>
+            <li onclick="showRecipe('fruitSalad')">Fruit Salad</li>
+            <li onclick="showRecipe('quickPizza')">Quick Veggie Pizza</li>
+            <li onclick="showRecipe('avocadoToast')">Avocado Toast</li>
+            <li onclick="showRecipe('poha')">Poha (Indian Flattened Rice Dish)</li>
+            <li onclick="showRecipe('vegetableUpma')">Vegetable Upma</li>
+            <li onclick="showRecipe('bananaPancake')">Banana Pancakes</li>
+            <li onclick="showRecipe('sundal')">Sundal (Indian Chickpea Snack)</li>
+        </ul>
+        <!-- Recipe Details -->
+        <div id="recipe-details" style="display: none;">
+            <h3 id="recipe-title"></h3>
+            <p id="recipe-steps"></p>
+        </div>
+    </div>
+
+    <!-- Exercise Section -->
+    <div id="exercise" class="section" style="display: none;">
+        <h2>Exercise Ideas for Kids</h2>
+        <ul>
+            <li>Obstacle course at home or backyard</li>
+            <li>Simple yoga poses for kids</li>
+            <li>Jump rope challenges</li>
+            <li>Nature scavenger hunt</li>
+            <li>Dancing to their favorite songs</li>
+        </ul>
+    </div>
+
+    <!-- News Section -->
+    <div id="news" class="section" style="display: none;">
+        <h2>News</h2>
+        
+        <!-- News Item 1 -->
+        <div class="news-item">
+            <h3>Benefits of a Balanced Diet for Kids</h3>
+            <p>A balanced diet is essential for children's growth and development...</p>
+            <div class="news-more" id="news1-more" style="display: none;">
+                <p>Incorporating fruits, vegetables, whole grains, and proteins helps in providing necessary nutrients that support physical and mental development.</p>
+            </div>
+            <button onclick="toggleReadMore('news1-more', this)">Read More</button>
+        </div>
+    
+        <!-- News Item 2 -->
+        <div class="news-item">
+            <h3>Importance of Physical Activity for Kids</h3>
+            <p>Physical activities can help children build strong bones, muscles, and reduce stress...</p>
+            <div class="news-more" id="news2-more" style="display: none;">
+                <p>Encouraging children to play outdoors, participate in sports, and engage in regular physical activities also enhances their social skills and boosts confidence.</p>
+            </div>
+            <button onclick="toggleReadMore('news2-more', this)">Read More</button>
+        </div>
+    
+        <!-- Add more news items as needed -->
+    </div>
+    
+
+    <!-- Link to JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>
