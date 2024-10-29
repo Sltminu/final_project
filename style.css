@@ -11,6 +11,9 @@ body {
     color: #333;
     line-height: 1.6;
 }
+#content {
+    flex: 1; 
+}
 
 /* Navigation Bar */
 nav {
@@ -62,52 +65,81 @@ nav button:hover {
 /* Home Section - Show by Default */
 #home {
     display: flex;
-    position: relative;
     background-image: url('istockphoto-1002254364-612x612.jpg'); /* Adjust the path if needed */
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    height: 100vh;
-    justify-content: center;
-    align-items: center;
     padding: 20px;
     text-align: center;
-    overflow: hidden;
-}
-#home::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(255, 255, 255, 0.85); /* Semi-transparent overlay */
-    filter: blur(20px); /* Blur effect */
-    z-index: -1;
-}
-#home-content {
-    position: relative;
-    max-width: 700px;
-    padding: 20px;
-    background-color: rgba(255, 255, 255, 0.8); /* Light background for text container */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
-    border-radius: 8px;
-}
+    width: 100%;
+    height: 100vh; 
+    flex-direction: column; 
+    justify-content: center; 
 
+}
 /* Heading Styling */
 #home-content h2 {
-    color: #98FB98; /* Pale green color for heading */
+    color: #98FB98; 
     font-weight: bold;
     font-size: 36px;
     margin-bottom: 15px;
 }
-
 /* Paragraph Styling */
 #home-content p {
     font-size: 18px;
     line-height: 1.6;
-    color: #333; /* Darker text for readability */
+    color: #333;
     margin: 0;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #4CAF50; 
+    color: white;
+    padding: 20px; 
+    display: flex; 
+    justify-content: space-around; 
+    align-items: flex-start; 
+    flex-wrap: wrap; 
+    width: 100%;
+}
+
+.footer-form {
+    background-color: #ffffff;
+    color: #333;
+    border-radius: 8px; /* Rounded corners */
+    padding: 15px; /* Padding inside forms */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+    width: 280px; /* Fixed width for forms */
+    margin: 10px; /* Margin around forms */
+}
+
+.footer-form h3 {
+    font-size: 18px;
+    color: #23a71e;
+    margin-bottom: 10px;
+}
+footer input,
+footer textarea {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+footer button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+footer button:hover {
+    background-color: #388E3C;
 }
 
 /* Meal Plan Section Background */
@@ -176,7 +208,13 @@ table tr:hover {
     color: #333;
     margin-bottom: 10px;
 }
-
+footer {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: auto;
+}
 /* Responsive Design */
 @media (max-width: 768px) {
     nav {
@@ -191,5 +229,16 @@ table tr:hover {
     .section {
         padding: 15px;
         margin: 15px;
+    }
+}
+@media (max-width: 768px) {
+    footer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-form {
+        width: 100%; /* Full width on smaller screens */
+        max-width: 300px; /* Limit width for better readability */
     }
 }

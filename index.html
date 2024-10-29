@@ -19,7 +19,7 @@
     </nav>
 
     <!-- Home Section -->
-    <div id="home" class="section"> 
+    <div id="home" class="section" style="display: block;"> 
         <div id="home-content">
             <h2>Welcome to my Kids Health and Wellness Website</h2>
             <p>Your go-to resource for healthy meal plans kids, quick healthy recipes for kids, Physical play ideas, and kids related news!</p>
@@ -153,7 +153,43 @@
             <button onclick="toggleReadMore('news2-more', this)">Read More</button>
         </div>
     
-        <!-- Add more news items as needed -->
+    <!-- Footer Section -->
+    <footer>
+        <div id="signin-form" class="footer-form">
+            <h3>Sign In for Regular Meal</h3>
+            <form id="signInForm">
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" name="firstName" required><br>
+                
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" name="lastName" required><br>
+                
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required><br>
+                
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+
+        <div id="feedback-form" class="footer-form">
+            <h3>Feedback</h3>
+            <form id="feedbackForm">
+                <label for="firstNameFeedback">First Name:</label>
+                <input type="text" id="firstNameFeedback" name="firstName" required><br>
+                
+                <label for="lastNameFeedback">Last Name:</label>
+                <input type="text" id="lastNameFeedback" name="lastName" required><br>
+                
+                <label for="emailFeedback">Email Address:</label>
+                <input type="email" id="emailFeedback" name="email" required><br>
+                
+                <textarea id="feedback" name="feedback" rows="2" placeholder="Enter your feedback" required></textarea><br>
+                
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </footer>
+
     </div>
     
 
