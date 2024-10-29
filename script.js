@@ -94,3 +94,53 @@ function toggleReadMore(id, button) {
         button.innerText = "Read More";
     }
 }
+// Function to submit feedback
+async function submitFeedback(event) {
+    event.preventDefault(); // Prevent the default form submission
+
+    // Collect form data
+    const firstName = document.getElementById('firstNameFeedback').value;
+    const lastName = document.getElementById('lastNameFeedback').value;
+    const email = document.getElementById('emailFeedback').value;
+    const feedbackText = document.getElementById('feedback').value;
+
+    // Create a payload for feedback
+    const feedbackPayload = {
+        userId: email, // Use email as userId for uniqueness
+        personalinfo: `${firstName} ${lastName}`, // Combine first and last name
+        feedback: feedbackText
+    };
+
+    try {
+        // Make a POST request to the API Gateway
+        const response = await fetch('https://7az1j2gjdk.execute-api.us-east-1.amazonaws.com/new1', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(feedbackPayload)
+        });
+
+        // Check if the response is ok
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        // Parse the response data
+        const result = await response.json();
+        
+        // Show a success message
+        document.getElementById('feedbackMessage').innerText = result.message;
+        document.getElementById('feedbackMessage').style.display = 'block';
+
+        // Reset the form fields
+        document.getElementById('feedbackForm').reset();
+
+    } catch (error) {
+        console.error('Error submitting feedback:', error);
+        alert('There was an error submitting your feedback. Please try again.');
+    }
+}
+
+// Attach the submitFeedback function to the feedback form
+document.getElementById('feedbackForm').addEventListener('submit', submitFeedback);
